@@ -1,7 +1,8 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 from config.settings import DB_URL
-from db.database import db
+from models.database import db
+# from api import all_bps
 
 app = Flask(__name__)
 
@@ -11,9 +12,8 @@ app.config["SQLALCHEMY_DATABASE_URI"] = DB_URL
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 
-from db.models import User, Product
-from api.user_product import up_bp
-app.register_blueprint(up_bp, url_prefix="/api")
+# for bp, prefix in all_bps:
+#     app.register_blueprint(bp, url_prefix=prefix)
 
 @app.route("/", methods=["GET"])
 def index():

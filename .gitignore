@@ -1,0 +1,19 @@
+frontend/node_modules
+frontend/dist
+frontend/.env.local
+frontend/.vite
+frontend/npm-debug.log
+
+backend/*/__pycache__/
+backend/*.pyc
+backend/.env
+backend/*.log
+
+# 数据库
+db/*.sql.log
+
+# Mac系统文件
+.DS_Store
+# IDE配置
+.idea/
+.vscode/
